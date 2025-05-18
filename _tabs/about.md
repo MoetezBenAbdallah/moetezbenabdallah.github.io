@@ -9,6 +9,6 @@ I created this blog to share writeups, document my learning journey, and provide
 I believe in learning by doing, and this space is where I grow and hopefully help others grow too.
 
 
-Feel free to reach out using the contact links at the bottom of the page!
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
+
+> Feel free to reach out using the contact links at the bottom of the page!
 {: .prompt-tip }

@@ -22,7 +22,7 @@ escalate our privileges and ultimately gain **root access**.
 
 ##  Enumeration
 ### nmap scan
-### We begin with an Nmap scan:
+We begin with an Nmap scan:
 
 ```bash
 $ nmap -A -Pn 10.10.11.48
@@ -52,7 +52,7 @@ Nmap done: 1 IP address (1 host up) scanned in 79.77 seconds
 
 ![Description](/assets/images/UnderPass/image%20(2).png)
 ### Daloradius web application
-### Using `dirsearch`, we discovered a hidden web directory at `/daloradius/`, which is commonly associated with the DaloRadius web interface:
+Using `dirsearch`, we discovered a hidden web directory at `/daloradius/`, which is commonly associated with the DaloRadius web interface:
 
 ```bash
 $ dirsearch -u "http://underpass.htb/daloradius/" -t 50
@@ -87,14 +87,14 @@ Task Completed
 While researching daloradius online, I identified a commonly used login path at /daloradius/operators/login.php. Accessing this path revealed a login panel for the daloradius web interface.
 
 ![Description](/assets/images/UnderPass/image%20(3).png)
-### 1. **Accessing DaloRadius**
+ 1. **Accessing DaloRadius**
 We navigate to `/daloradius/operators/login.php` and log in with default credentials:
 
 - **Username:** administrator  
 - **Password:** radius
 
 ![Description](/assets/images/UnderPass/image%20(4).png)
-### 2. **Retrieving User Hash**
+ 2. **Retrieving User Hash**
 Inside DaloRadius, we find a user `svcMosh` with the following hash:
 
 ```
@@ -106,7 +106,7 @@ Using [crackstation.net](https://crackstation.net), we crack the hash:
 
 - **Password:** underwaterfriends
 
-### 3. **Gaining SSH Access**
+ 3. **Gaining SSH Access**
 We SSH into the box:
 
 ```bash

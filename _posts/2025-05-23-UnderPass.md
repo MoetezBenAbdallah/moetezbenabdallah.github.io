@@ -4,6 +4,7 @@ title: "Hack The Box: Underpass"
 date: 2025-05-23
 categories: [HackTheBox, Writeup]
 tags: [Linux, easy, daloradius, mosh, privilege-escalation]
+permalink: /posts/Underpass/
 toc: true
 ---
 

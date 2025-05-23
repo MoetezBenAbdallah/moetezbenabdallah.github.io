@@ -222,7 +222,8 @@ jekyll-archives:
     category: category
     tag: tag
 
-  permalinks:
-    posts: /posts/:title/
-    tags: /tags/:name/
-    categories: /categories/:name/
+permalinks:
+  posts: /posts/:title/
+  tags: /tags/:name/
+  categories: /categories/:name/
+

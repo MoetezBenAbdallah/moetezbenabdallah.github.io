@@ -221,6 +221,6 @@ jekyll-archives:
   layouts:
     category: category
     tag: tag
-  permalinks: /posts/Underpass
+  permalinks:
     tag: /tags/:name/
     category: /categories/:name/

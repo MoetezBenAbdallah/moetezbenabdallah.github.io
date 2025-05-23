@@ -8,18 +8,7 @@ permalink: /posts/Underpass/
 toc: true
 ---
 
-#  Hack The Box: Underpass 
-## Table of Contents
 
-- [Enumeration](#enumeration)
-  - [Nmap Scan](#nmap-scan)
-  - [Daloradius Web Application](#daloradius-web-application)
-- [Exploitation](#exploitation)
-  - [Initial Foothold](#initial-foothold)
-  - [Privilege Escalation](#privilege-escalation)
-
-
-Posted May 23, 2025
 ![Description](/assets/images/UnderPass/image%20(1).png)
 
 **UnderPass** is an **easy-difficulty machine** from Hack The Box that starts with an

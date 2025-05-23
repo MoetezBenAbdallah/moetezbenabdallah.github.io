@@ -20,7 +20,7 @@ toc: true
 
 
 Posted May 23, 2025
-![Description](assets/images/UnderPass/image (1).png)
+![Description](/assets/images/UnderPass/image%20(1).png)
 
 **UnderPass** is an **easy-difficulty machine** from Hack The Box that starts with an
 exposed **Daloradius** instance, accessible using **default credentials**. Inside the
@@ -61,7 +61,7 @@ Nmap done: 1 IP address (1 host up) scanned in 79.77 seconds
 
  Trying to access the website, it looks like we have a default apache page
 
-![Description](assets/images/UnderPass/image (2).png)
+![Description](/assets/images/UnderPass/image%20(2).png)
 ### Daloradius web application
 ### Using `dirsearch`, we discovered a hidden web directory at `/daloradius/`, which is commonly associated with the DaloRadius web interface:
 
@@ -97,21 +97,21 @@ Task Completed
 ### initial foothold
 While researching daloradius online, I identified a commonly used login path at /daloradius/operators/login.php. Accessing this path revealed a login panel for the daloradius web interface.
 
-![Description](assets/images/UnderPass/image (3).png)
+![Description](/assets/images/UnderPass/image%20(3).png)
 ### 1. **Accessing DaloRadius**
 We navigate to `/daloradius/operators/login.php` and log in with default credentials:
 
 - **Username:** administrator  
 - **Password:** radius
 
-![Description](assets/images/UnderPass/image (4).png)
+![Description](/assets/images/UnderPass/image%20(4).png)
 ### 2. **Retrieving User Hash**
 Inside DaloRadius, we find a user `svcMosh` with the following hash:
 
 ```
 412DD4759978ACFCC81DEAB01B382403
 ```
-![Description](assets/images/UnderPass/image (3).png)
+![Description](/assets/images/UnderPass/image%20(5).png)
 
 Using [crackstation.net](https://crackstation.net), we crack the hash:
 

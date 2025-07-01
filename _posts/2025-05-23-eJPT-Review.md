@@ -1,3 +1,14 @@
+---
+layout: post
+title: "eLearnSecurity Junior Penetration Tester (eJPT) – Review 🚀"
+date: 2025-07-01
+categories: [Certifications, Review]
+tags: [eJPT, INE, penetration-testing, beginner, cybersecurity, report]
+permalink: /posts/eJPT-Review/
+toc: true
+---
+
+
 # eLearnSecurity Junior Penetration Tester (eJPT) - Review 🚀
 
 **Moetez Ben Abdallah**  

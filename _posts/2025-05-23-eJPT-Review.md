@@ -7,14 +7,6 @@ tags: [eJPT, INE, penetration-testing, beginner, cybersecurity, report]
 permalink: /posts/eJPT-Review/
 toc: true
 ---
-
-
-# eLearnSecurity Junior Penetration Tester (eJPT) - Review 🚀
-
-**Moetez Ben Abdallah**  
-eJPTv2 Certified | Junior Penetration Tester
-
-🗓 Created: 2025-07-01 | 🔄 Updated: 2025-07-01  
 🏅 Certifications: eJPT, aiming for CRTP & PT1
 
 ---
@@ -67,7 +59,7 @@ INE’s **Penetration Testing Student v1 (PTSv1)** course is the official prep m
 
 ## Exam Experience
 
-The exam gives you **48 hours** of lab time to compromise several machines and answer 20 questions based on your findings. I completed mine in about **9 hours**, including breaks and double-checking answers.
+The exam gives you **48 hours** of lab time to compromise several machines and answer 35 questions based on your findings. I completed mine in about **9 hours**, including breaks and double-checking answers.
 
 There’s **no report writing**, but make no mistake, this is a **hands-on, skill-based exam**. Every question is tied to an action you take in the lab. It’s not enough to know the commands - you have to **understand the process and logic** behind each step.
 

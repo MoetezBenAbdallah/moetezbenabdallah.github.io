@@ -43,7 +43,7 @@ So, we have 2 open port 22/tcp ssh and 80/tcp HTTP which will be our target in t
 
 I started by opening the website after adding the environment.htb to /etc/hosts of course.
 
-![Description](/assets/images/Environment/image%20(1).png)
+![Description](/assets/images/Environment/image(1).png)
 
 Nothing suspicious in the website so i used feroxbuter to enumerate the directories. I guess there are hidden directories here
 
@@ -93,7 +93,7 @@ Okay, now we have something. We do have login page and we have /mailing also.
 
 I tried accessing the /mailing directory and look what i found.
 
-![Description](/assets/images/Environment/image%20(2).png)
+![Description](/assets/images/Environment/image(2).png)
 
 We have laravel here with version defined as 11.30.0 
 
@@ -105,15 +105,15 @@ https://github.com/Nyamort/CVE-2024-52301
 
 So, What the poc is saying is to add after the /login a parameter “?—env=preprod” that will bypass the login page and forward us to http://environment.htb/management/dashboard
 
-![Description](/assets/images/Environment/image%20(3).png)
+![Description](/assets/images/Environment/image(3).png)
 
 After that forward the request and you will be automatically redirected to this page here as a user called “Hish”.
 
-![Description](/assets/images/Environment/image%20(4).png)
+![Description](/assets/images/Environment/image(4).png)
 
 I went to the profile section and look what i found
 
-![Description](/assets/images/Environment/image%20(5).png)
+![Description](/assets/images/Environment/image(5).png)
 
 It’s an upload page , I was trying many things but the trick here was to bypass the php file so he can succesfully execute a reverse shell on our terminal.
 
@@ -141,7 +141,7 @@ So, using the https://www.revshells.com/ I retrieved the reverse shell of the PH
 
 But it wasn’t enough I created a file called rev.gif.php and added in the first line the header of the GIF which I found it in the internet “GIF87a” and even with this things i did , I wasn’t able to execute the reverse shell until i found out that adding a “.” after the name of my file will bypass the file error upload. So, I renamed it to “rev.gif.shell.”  and upload it.
 
-![Description](/assets/images/Environment/image%20(6).png)
+![Description](/assets/images/Environment/image(6).png)
 
 Let me now execute a simple netcat reverse to get the shell.
 

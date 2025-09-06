@@ -10,8 +10,6 @@ toc: true
 
 
 
-# HackTheBox: Environment
-
 Environment is an easy-difficulty Linux machine from Hack The Box where we exploited a **Laravel 11.30.0 CVE** using `--env=preprod` to bypass the login page and reach the file uploader to gain RCE on `www-data`→ enumerate a backup directory to recover a GPG-encrypted keyvault and private keys → import and decrypt it locally to obtain the `hish` user’s credentials → finally escalate to root by abusing the `env_keep+="ENV BASH_ENV"` misconfiguration in sudo to inject commands and spawn a root shell.
 
 ## **Enumeration**

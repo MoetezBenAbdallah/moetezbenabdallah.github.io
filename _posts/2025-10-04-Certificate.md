@@ -8,7 +8,7 @@ permalink: /posts/Certificate/
 toc: true
 ---
 
-# Hackthebox: Certificate
+![Description](/assets/images/Certificate/0.png)
 
 Certificate is a hard-difficulty windows machine from Hack The Box where -> Bypass upload filter (zip) upload PHP webshell → RCE -> Dump DB / extract password hash → crack locally → use credentials.
 -> Analyse PCAP → extract Kerberos ticket/hash → crack with hashcat → compromise next user.
@@ -631,7 +631,7 @@ Crawling into this file that has been generated, I found that there are template
         "ESC3 Target Template": "Template can be targeted as part of ESC3 exploitation. This is not a vulnerability by itself. See the wiki for more details. Template requires a signature with the Certificate Request Agent application policy."
 ```
 
-So using the orange mindmap which is my eyes when it comes to Active Directory, I grab the command to request a new certificate in behalf of the ryan.k user. (if you are wondering how I found out the exact user. I simply used the shell of [Lion.SK](http://Lion.SK) and navigated to C:\Users to know the next target).
+So using the orange mindmap which is my eyes when it comes to Active Directory, I grab the command to request a new certificate in behalf of the ryan.k user. (if you are wondering how I found out the exact user. I simply used the shell of Lion.SK and navigated to C:\Users to know the next target).
 
 ```powershell
 ┌──(certipy-env)─(sanke㉿vbox)-[~/Downloads/certificate]

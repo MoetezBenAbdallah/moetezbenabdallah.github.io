@@ -66,7 +66,7 @@ HOP RTT      ADDRESS
 
 So we do have 2 ports for the ssh which are port 2222 and 22. Of course we have also an http port 80/tcp
 
-![Description](assets/images/WhiteRabbit/image%20(8).png)
+![Description](assets/images/WhiteRabbit/10.png)
 
 Let’s go ahead and fuzz for the endpoints.
 
@@ -102,7 +102,7 @@ status                  [Status: 302, Size: 32, Words: 4, Lines: 1, Duration: 58
 
 ```
 
-![Description](assets/images/WhiteRabbit/image%20(9).png)
+![Description](assets/images/WhiteRabbit/11.png)
 
 ## **Exploitation**
 
@@ -135,7 +135,7 @@ by Ben "epi" Risher 🤓                 ver: 2.11.0
 200      GET       41l      152w     3359c http://status.whiterabbit.htb/status/temp
 ```
 
-![Description](assets/images/WhiteRabbit/image%20(12).png)
+![Description](assets/images/WhiteRabbit/12.png)
 
 Okay we have juicy things here. We have new subdomains:
 
@@ -144,7 +144,7 @@ Okay we have juicy things here. We have new subdomains:
 
 Let’s start by navigating to wikijs subdomain. I found a webhook talks about a workflow n8n and there was something there that might help us.
 
-![Description](assets/images/WhiteRabbit/image%20(10).png)
+![Description](assets/images/WhiteRabbit/13.png)
 
 There is a new subdomain found there `28efa8f7df.whiterabbit.htb` that deal with x-gophish-signature parameter and email parameter to verify the POST and also a json file attached that we can download it. Let’s first start by adding the new suibdomain to our /etc/hosts and then we check the json file. We found the secret for the HMAC which is here “3CWVGMndgMvdVAzOjqBiTicmv7gxc6IS”.
 
@@ -156,7 +156,7 @@ We used CyberChef to generate valid HMAC signatures for payloads like:
 "message": "Clicked Link"
 }
 
-![Description](assets/images/WhiteRabbit/image%20(11).png)
+![Description](assets/images/WhiteRabbit/14.png)
 
 We sent the payload with this HMAC and it worked with SQL Injection confirmed. So if we gonna use sqlmap now we should make sure that every payload change will be changing the new HMAC with it to match the payload.
 

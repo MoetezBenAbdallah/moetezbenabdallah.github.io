@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Hack The Box: Fluffy"
+title: "Hack The Box: WhiteRabbit"
 date: 2025-09-21
 categories: [HackTheBox, Writeup]
-tags: [Windows, easy, Bloodhound, Active Directory, CVE-2025-24071, ESC16]
-permalink: /posts/Fluffy/
+tags: [Linux,n8n,sqlmap]
+permalink: /posts/WhiteRabbit/
 toc: true
 ---
 

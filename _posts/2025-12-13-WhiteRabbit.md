@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hack The Box: WhiteRabbit"
-date: 2025-09-21
+date: 2025-12-13
 categories: [HackTheBox, Writeup]
 tags: [Linux,n8n,sqlmap]
 permalink: /posts/WhiteRabbit/

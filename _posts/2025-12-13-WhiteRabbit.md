@@ -8,7 +8,7 @@ permalink: /posts/Fluffy/
 toc: true
 ---
 
-![Description](/assets/images/fluffy/fluffy.png)
+![Description](/assets/images/WhiteRabbit/1744728038.jpg)
 
 WhiteRabbit is an insane machine from HackThebox where i started with Virtual host fuzzing revealed internal **status** subdomain --> Misconfigured **Uptime Kuma** / **WikiJS** stack exposed **GoPhish** webhook and **HMAC** secret --> Forged valid **x-gophish-signature** to bypass webhook authentication --> **SQL Injection** in webhook endpoint disclosed Restic repository credentials --> Restic repository dump led to Bob’s **SSH private key** --> SSH access as Bob and abuse of **sudo-allowed** Restic for root data exfiltration --> Extraction of Morpheus SSH key and user-level access --> Predictable **password generator** exploited to recover Neo credentials --> Neo had full sudo access, leading to root compromise
 
@@ -66,7 +66,7 @@ HOP RTT      ADDRESS
 
 So we do have 2 ports for the ssh which are port 2222 and 22. Of course we have also an http port 80/tcp
 
-![image.png](attachment:aae60da5-9df5-4633-9c10-71634486b618:image.png)
+![Description](assets/images/WhiteRabbit/image%20(8).png)
 
 Let’s go ahead and fuzz for the endpoints.
 
@@ -102,7 +102,7 @@ status                  [Status: 302, Size: 32, Words: 4, Lines: 1, Duration: 58
 
 ```
 
-![image.png](attachment:3a308da5-2a31-48f3-9dd7-b2d89fc72b16:image.png)
+![Description](assets/images/WhiteRabbit/image%20(9).png)
 
 ## **Exploitation**
 
@@ -135,7 +135,7 @@ by Ben "epi" Risher 🤓                 ver: 2.11.0
 200      GET       41l      152w     3359c http://status.whiterabbit.htb/status/temp
 ```
 
-![image.png](attachment:05dfa283-f10c-4b81-989e-2ed69c75eed6:image.png)
+![Description](assets/images/WhiteRabbit/image%20(12).png)
 
 Okay we have juicy things here. We have new subdomains:
 
@@ -144,7 +144,7 @@ Okay we have juicy things here. We have new subdomains:
 
 Let’s start by navigating to wikijs subdomain. I found a webhook talks about a workflow n8n and there was something there that might help us.
 
-![image.png](attachment:ab1a8eff-7673-48a6-a3ec-4ddd8a70411e:image.png)
+![Description](assets/images/WhiteRabbit/image%20(10).png)
 
 There is a new subdomain found there `28efa8f7df.whiterabbit.htb` that deal with x-gophish-signature parameter and email parameter to verify the POST and also a json file attached that we can download it. Let’s first start by adding the new suibdomain to our /etc/hosts and then we check the json file. We found the secret for the HMAC which is here “3CWVGMndgMvdVAzOjqBiTicmv7gxc6IS”.
 
@@ -156,7 +156,7 @@ We used CyberChef to generate valid HMAC signatures for payloads like:
 "message": "Clicked Link"
 }
 
-![image.png](attachment:28c3044b-5878-4bc9-8c89-93e3846731f0:image.png)
+![Description](assets/images/WhiteRabbit/image%20(11).png)
 
 We sent the payload with this HMAC and it worked with SQL Injection confirmed. So if we gonna use sqlmap now we should make sure that every payload change will be changing the new HMAC with it to match the payload.
 
@@ -250,7 +250,7 @@ rest:http://75951e6ff.whiterabbit.htb |
 
 From the command logs, we identified a Restic repo:
 
-[http://75951e6ff.whiterabbit.htb](http://75951e6ff.whiterabbit.htb/)
+http://75951e6ff.whiterabbit.htb/
 We also found the password:
 
 ygcsvCuMdfZ89yaRLlTKhe5jAmth7vxw
